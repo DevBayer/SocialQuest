@@ -1,0 +1,37 @@
+body {
+	font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+}
+
+.navbar.navbar-custom-socialquest {
+	background: rgba(0, 0, 0, 0.15) !important;
+	border-bottom: 1px solid whitesmoke !important;
+}
+
+.navbar.navbar-custom-socialquest.is-visible {
+	background: rgba(255, 255, 255, 0.28) !important;
+}
+
+.container.normal-page {
+	padding-top: 100px;
+}
+
+.btn-social > .fa {
+	line-height: 55px !important;
+}
+
+.opcionesMain {
+	text-align: center;
+
+	
+}
+
+.opciones {
+
+	border-width: 2px;
+	border-style: solid;
+	border-color: grey;
+	font-size: 30px;
+	
+	
+	text-decoration: none;
+}

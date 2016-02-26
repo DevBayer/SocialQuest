@@ -11,6 +11,22 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+/* 
+/Route::get('/', function () {
+/    return view('welcome');
+/});
+*/
+
+Route::get('/', ['as' => 'static.home', 'uses' => 'StaticController@home']);
+Route::get('inicio', ['as' => 'static.home', 'uses' => 'StaticController@home']);
+Route::get('como-funciona', ['as' => 'static.how_works', 'uses' => 'StaticController@how_works']);
+Route::get('contacto', ['as' => 'static.contact', 'uses' => 'StaticController@contact']);
+
+// Authentication routes...
+Route::get('auth/login', 'Auth\AuthController@getLogin');
+Route::post('auth/login', 'Auth\AuthController@postLogin');
+Route::get('auth/logout', 'Auth\AuthController@getLogout');
+
+// Registration routes...
+Route::get('auth/register', 'Auth\AuthController@getRegister');
+Route::post('auth/register', 'Auth\AuthController@postRegister');

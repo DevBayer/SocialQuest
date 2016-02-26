@@ -1,0 +1,22 @@
+.Perfil .bloqueusuario,  .valoracion .bloqueusuario{
+	display: block;
+	margin-bottom:5px;
+}
+.Perfil .bloqueusuario > span, .valoracion .bloqueusuario > span{
+	display: inline;
+}
+.Perfil .bloqueusuario > .glyphicon, .valoracion .bloqueusuario > .glyphicon {
+  margin-right:10px;
+  }
+ .fotoperfil{
+	border-radius: 100%;
+	border:1px solid green ;
+	width:110px;
+	height:110px;
+	 
+ }
+ 
+ .main {
+	 margin-top: 80px;
+ }
+ 
