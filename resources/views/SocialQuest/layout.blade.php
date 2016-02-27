@@ -89,7 +89,7 @@
 				</ul>
 			</li>
 	                <li>
-        	                <a href="#"><i class="fa fa-map-marker"></i> Buscar Quest</a>
+        	                <a href="{{ route('quests.list') }}"><i class="fa fa-map-marker"></i> Buscar Quest</a>
                 	</li>
 	                <li>
           	              <a href="{{ route('search.home') }}"><i class="fa fa-search"></i> Buscar</a>
@@ -105,6 +105,8 @@
         </div>
         <!-- /.container -->
     </nav>
+
+	@include('SocialQuest.partials.alerts_messages')
 	@yield('page_content')
 
     <!-- Footer -->

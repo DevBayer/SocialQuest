@@ -18,6 +18,17 @@
 		<div class="container">
 		<div class="row">
 
+			@if(Auth::check())
+				<div class="col-md-8">
+					<div id="map" style="height: 300px;background: #6699cc;"></div>
+				</div>
+				<div class="col-md-4 text-center">
+					<a href="{{ route('quests.list') }}" class="btn btn-primary"><i class="fa fa-map-marker"></i> Buscar Quest</a>
+					<hr>
+					<a href="{{ route('quests.create') }}" class="btn btn-primary"><i class="fa fa-plus-square"></i> Crear Quest</a>
+				</div>
+			@endif
+
 				<div class="col-md-12">
 				<hr>
 				<div class="col-md-6" align="center">
@@ -31,4 +42,33 @@
 				</div>
 		</div>
 		</div>
+
+@section('scripts')
+<script type="text/javascript">
+var map;
+$( document ).ready(function() {
+      var map = new GMaps({
+        el: '#map',
+        lat: 41.4045963,
+        lng: 2.1790418
+      });
+
+
+  GMaps.geolocate({
+    success: function(position){
+      map.setCenter(position.coords.latitude, position.coords.longitude);
+    },
+    error: function(error){
+      alert('Geolocation failed: '+error.message);
+    },
+    not_supported: function(){
+      alert("Your browser does not support geolocation");
+    },
+    always: function(){
+
+    }
+  });
+});
+</script>
+@endsection
 @endsection

@@ -14,15 +14,20 @@ class QuestsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         $latitude = \Auth::user()->latitude;
         $longitude = \Auth::user()->longitude;
+	$radio =  \Input::get('rango');
+	if(is_null($radio) || $radio > 5 || $radio < 1){
+		$radio = 1;
+	}
+	$radio = $radio * 10;
         $quests = \App\Quest::select(\DB::raw(
             '*,( 6371 * acos( cos( radians(' . $latitude . ') ) * cos( radians( latitude ) ) 
             * cos( radians( longitude ) - radians('.$longitude.') ) + sin( radians('.$latitude.') ) 
             * sin( radians( latitude ) ) ) ) AS distance'))
-                ->having('distance', '<', '25')
+                ->having('distance', '<', $radio)
                 ->orderBy('distance')->get();
         return view('SocialQuest.quests.list', compact('quests'));
     }
