@@ -48,6 +48,13 @@ Route::group(['prefix' => 'usuario', 'middleware' => 'auth'], function () {
 });
 
 
-Route::get('quests/mapa', ['as' => 'quests.map', 'uses' => 'QuestsController@index']);
+Route::group(['prefix' => 'quests', 'middleware' => 'auth'], function () {
+	Route::get('/', ['as' => 'quests.list', 'uses' => 'QuestsController@index']);
+	Route::put('/', ['as' => 'quests.update', 'uses' => 'QuestsController@update']);
+	Route::delete('/', ['as' => 'quests.delete', 'uses' => 'QuestsController@delete']);
+	Route::get('/create', ['as' => 'quests.create', 'uses' => 'QuestsController@create']);
+	Route::post('/create', ['as' => 'quests.create', 'uses' => 'QuestsController@store']);
+});
+
 Route::get('buscar', ['as' => 'search.home', 'uses' => 'SearchController@index']);
 Route::get('buscar/{search}', ['as' => 'search.query', 'uses' => 'SearchController@search']);

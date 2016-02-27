@@ -16,7 +16,7 @@ class UserController extends Controller
      */
     public function index()
     {
-	$user = \Auth::user();
+        $user = \Auth::user();
         return view('SocialQuest.user.profile', compact('user'));
     }
 
@@ -62,7 +62,7 @@ class UserController extends Controller
      */
     public function edit()
     {
-	$user = \Auth::user();
+        $user = \Auth::user();
         return view('SocialQuest.user.edit', compact('user'));
     }
 

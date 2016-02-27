@@ -26,13 +26,31 @@
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
-
+    @yield('styles')
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <!-- jQuery -->
+    <!--    <script src="js/jquery.js"></script> -->
+    {!! HTML::script('socialquest/js/jquery.js'); !!}
+
+    <!-- Bootstrap Core JavaScript -->
+    <!--    <script src="js/bootstrap.min.js"></script> -->
+    {!! HTML::script('socialquest/js/bootstrap.min.js'); !!}
+
+
+    <!-- Custom Theme JavaScript -->
+    <!--    <script src="js/clean-blog.min.js"></script> -->
+    {!! HTML::script('socialquest/js/clean-blog.min.js'); !!}
+    {!! HTML::script('socialquest/js/sweetalert/sweetalert.min.js'); !!}
+
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
+    {!! HTML::script('socialquest/thirds/gmaps/gmaps.min.js'); !!}
+
+    @yield('scripts')
 
 </head>
 
@@ -127,29 +145,6 @@
     </footer>
 
 	@include('SocialQuest.partials.modal-login')
-
-    <!-- jQuery -->
-<!--    <script src="js/jquery.js"></script> -->
-	{!! HTML::script('socialquest/js/jquery.js'); !!}
-
-    <!-- Bootstrap Core JavaScript -->
-<!--    <script src="js/bootstrap.min.js"></script> -->
-        {!! HTML::script('socialquest/js/bootstrap.min.js'); !!}
-
-
-    <!-- Custom Theme JavaScript -->
-<!--    <script src="js/clean-blog.min.js"></script> -->
-        {!! HTML::script('socialquest/js/clean-blog.min.js'); !!}
-
-	{!! HTML::script('socialquest/js/sweetalert/sweetalert.min.js'); !!}
-
-
-	<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
-	{!! HTML::script('socialquest/thirds/gmaps/gmaps.min.js'); !!}
-
-
-	@yield('scripts')
-
 </body>
 
 </html>
