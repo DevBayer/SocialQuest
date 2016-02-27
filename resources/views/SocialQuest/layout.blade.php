@@ -78,6 +78,9 @@
                     <li>
                         <a href="{{ route('static.how_works') }}">Como funciona</a>
                     </li>
+                    <li>
+                        <a href="{{ route('static.about') }}">Sobre nosotros</a>
+                    </li>
                     @if(Auth::check())
 			<li class="dropdown">
 				<a class="dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expended="false" href="#"><i class="fa fa-user"></i> Mi perfil <span class="caret"></span></a>
