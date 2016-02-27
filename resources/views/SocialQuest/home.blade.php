@@ -25,8 +25,8 @@
 					<p>Social Quest busca que las personas que necesiten cualquier ayuda, los quest givers, tengan una plataforma en la que hacer sus propuestas de una forma rápida y sencilla y en el caso de los adventurers, que serían las personas que resolverían las misiones, tengan acceso a las peticiones que más se ajusten a su perfil y que estén más cerca de su ubicación.</p>
 				</div>
 				<div class="col-md-6" align="center">
-					<h3 style="color:green">¿Lorem ipsum?</h3>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus porttitor arcu justo, at lobortis arcu egestas sed. Ut pellentesque nulla non neque consequat, ac malesuada ex tincidunt. Integer lobortis purus tincidunt semper pretium. Integer sagittis ullamcorper ex sed placerat. Sed elementum elit id placerat dapibus. Quisque sit amet sem placerat, aliquam nulla a, mattis risus. Donec tristique nisl vitae semper faucibus. Quisque at sagittis nulla, at fringilla nunc. Praesent finibus erat et rhoncus iaculis.</p>
+					<h3 style="color:green">¿Qué són las "quests" o misiones?</h3>
+					<p>Las quests son tareas que los <i>quest givers</i> proponen, pueden ir desde simples tareas cotidianas como ayudar a bajar muebles, sacar a pasear a una mascota, acompañar o llevar a alguien a algún sitio… hasta tareas más complejas y que pueden ayudar a comunidades más grandes como ayudar a montar algún evento, recoger los residuos que éste genere, etc.</p>
 				</div>
 				</div>
 		</div>

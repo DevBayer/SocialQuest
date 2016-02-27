@@ -1,0 +1,139 @@
+    /*
+    Flaticon icon font: Flaticon
+    Creation date: 19/02/2016 14:49
+    */
+
+    @font-face {
+  font-family: "Flaticon";
+  src: url("./Flaticon.eot");
+  src: url("./Flaticon.eot?#iefix") format("embedded-opentype"),
+       url("./Flaticon.woff") format("woff"),
+       url("./Flaticon.ttf") format("truetype"),
+       url("./Flaticon.svg#Flaticon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: "Flaticon";
+    src: url("./Flaticon.svg#Flaticon") format("svg");
+  }
+}
+
+    .fi:before{
+        display: inline-block;
+  font-family: "Flaticon";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  line-height: 1;
+  text-decoration: inherit;
+  text-rendering: optimizeLegibility;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+    }
+
+    .flaticon-big-shield:before { content: "\f100"; }
+.flaticon-big-shield-1:before { content: "\f101"; }
+.flaticon-big-shield-2:before { content: "\f102"; }
+.flaticon-big-shield-with-cross:before { content: "\f103"; }
+.flaticon-brick-shield:before { content: "\f104"; }
+.flaticon-circular-shield:before { content: "\f105"; }
+.flaticon-defense-shield:before { content: "\f106"; }
+.flaticon-half-shield-with-stripes:before { content: "\f107"; }
+.flaticon-long-shield-with-two-sword-crossed:before { content: "\f108"; }
+.flaticon-old-shield:before { content: "\f109"; }
+.flaticon-oval-shield-with-three-lines-and-circle:before { content: "\f10a"; }
+.flaticon-rectangular-shield-with-lines-and-circle:before { content: "\f10b"; }
+.flaticon-round-shield:before { content: "\f10c"; }
+.flaticon-round-shield-with-star:before { content: "\f10d"; }
+.flaticon-round-shield-with-sun:before { content: "\f10e"; }
+.flaticon-shield-checked:before { content: "\f10f"; }
+.flaticon-shield-grid:before { content: "\f110"; }
+.flaticon-shield-with-big-cross:before { content: "\f111"; }
+.flaticon-shield-with-cancel-symbol:before { content: "\f112"; }
+.flaticon-shield-with-check-mark:before { content: "\f113"; }
+.flaticon-shield-with-christian-cross:before { content: "\f114"; }
+.flaticon-shield-with-circle:before { content: "\f115"; }
+.flaticon-shield-with-circles:before { content: "\f116"; }
+.flaticon-shield-with-clover:before { content: "\f117"; }
+.flaticon-shield-with-cross:before { content: "\f118"; }
+.flaticon-shield-with-cross-1:before { content: "\f119"; }
+.flaticon-shield-with-crown:before { content: "\f11a"; }
+.flaticon-shield-with-diagonal-stripes:before { content: "\f11b"; }
+.flaticon-shield-with-dollar-symbol:before { content: "\f11c"; }
+.flaticon-shield-with-dollar-symbol-1:before { content: "\f11d"; }
+.flaticon-shield-with-exclamation-mark:before { content: "\f11e"; }
+.flaticon-shield-with-greek-cross:before { content: "\f11f"; }
+.flaticon-shield-with-half-moon:before { content: "\f120"; }
+.flaticon-shield-with-heart:before { content: "\f121"; }
+.flaticon-shield-with-horizontal-stripes:before { content: "\f122"; }
+.flaticon-shield-with-horizontal-stripes-and-circle:before { content: "\f123"; }
+.flaticon-shield-with-keyhole:before { content: "\f124"; }
+.flaticon-shield-with-line:before { content: "\f125"; }
+.flaticon-shield-with-padlock:before { content: "\f126"; }
+.flaticon-shield-with-queen-crown:before { content: "\f127"; }
+.flaticon-shield-with-question-mark:before { content: "\f128"; }
+.flaticon-shield-with-star:before { content: "\f129"; }
+.flaticon-shield-with-star-1:before { content: "\f12a"; }
+.flaticon-shield-with-stripes:before { content: "\f12b"; }
+.flaticon-shield-with-sword:before { content: "\f12c"; }
+.flaticon-shield-with-two-stripes:before { content: "\f12d"; }
+.flaticon-shield-with-two-swords:before { content: "\f12e"; }
+.flaticon-shield-with-vertical-and-horizontal-stripes:before { content: "\f12f"; }
+.flaticon-square-shield-with-cross:before { content: "\f130"; }
+.flaticon-striped-shield-with-circle:before { content: "\f131"; }
+    
+    $font-Flaticon-big-shield: "\f100";
+    $font-Flaticon-big-shield-1: "\f101";
+    $font-Flaticon-big-shield-2: "\f102";
+    $font-Flaticon-big-shield-with-cross: "\f103";
+    $font-Flaticon-brick-shield: "\f104";
+    $font-Flaticon-circular-shield: "\f105";
+    $font-Flaticon-defense-shield: "\f106";
+    $font-Flaticon-half-shield-with-stripes: "\f107";
+    $font-Flaticon-long-shield-with-two-sword-crossed: "\f108";
+    $font-Flaticon-old-shield: "\f109";
+    $font-Flaticon-oval-shield-with-three-lines-and-circle: "\f10a";
+    $font-Flaticon-rectangular-shield-with-lines-and-circle: "\f10b";
+    $font-Flaticon-round-shield: "\f10c";
+    $font-Flaticon-round-shield-with-star: "\f10d";
+    $font-Flaticon-round-shield-with-sun: "\f10e";
+    $font-Flaticon-shield-checked: "\f10f";
+    $font-Flaticon-shield-grid: "\f110";
+    $font-Flaticon-shield-with-big-cross: "\f111";
+    $font-Flaticon-shield-with-cancel-symbol: "\f112";
+    $font-Flaticon-shield-with-check-mark: "\f113";
+    $font-Flaticon-shield-with-christian-cross: "\f114";
+    $font-Flaticon-shield-with-circle: "\f115";
+    $font-Flaticon-shield-with-circles: "\f116";
+    $font-Flaticon-shield-with-clover: "\f117";
+    $font-Flaticon-shield-with-cross: "\f118";
+    $font-Flaticon-shield-with-cross-1: "\f119";
+    $font-Flaticon-shield-with-crown: "\f11a";
+    $font-Flaticon-shield-with-diagonal-stripes: "\f11b";
+    $font-Flaticon-shield-with-dollar-symbol: "\f11c";
+    $font-Flaticon-shield-with-dollar-symbol-1: "\f11d";
+    $font-Flaticon-shield-with-exclamation-mark: "\f11e";
+    $font-Flaticon-shield-with-greek-cross: "\f11f";
+    $font-Flaticon-shield-with-half-moon: "\f120";
+    $font-Flaticon-shield-with-heart: "\f121";
+    $font-Flaticon-shield-with-horizontal-stripes: "\f122";
+    $font-Flaticon-shield-with-horizontal-stripes-and-circle: "\f123";
+    $font-Flaticon-shield-with-keyhole: "\f124";
+    $font-Flaticon-shield-with-line: "\f125";
+    $font-Flaticon-shield-with-padlock: "\f126";
+    $font-Flaticon-shield-with-queen-crown: "\f127";
+    $font-Flaticon-shield-with-question-mark: "\f128";
+    $font-Flaticon-shield-with-star: "\f129";
+    $font-Flaticon-shield-with-star-1: "\f12a";
+    $font-Flaticon-shield-with-stripes: "\f12b";
+    $font-Flaticon-shield-with-sword: "\f12c";
+    $font-Flaticon-shield-with-two-stripes: "\f12d";
+    $font-Flaticon-shield-with-two-swords: "\f12e";
+    $font-Flaticon-shield-with-vertical-and-horizontal-stripes: "\f12f";
+    $font-Flaticon-square-shield-with-cross: "\f130";
+    $font-Flaticon-striped-shield-with-circle: "\f131";

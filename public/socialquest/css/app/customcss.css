@@ -3,12 +3,26 @@ body {
 }
 
 .navbar.navbar-custom-socialquest {
-	background: rgba(0, 0, 0, 0.15) !important;
+	background: black !important;
 	border-bottom: 1px solid whitesmoke !important;
 }
 
 .navbar.navbar-custom-socialquest.is-visible {
 	background: rgba(255, 255, 255, 0.28) !important;
+}
+
+.navbar.navbar-custom-socialquest .dropdown-menu {
+	    background: black;
+	    border-top: 1px solid whitesmoke;
+}
+
+.navbar-custom-socialquest .navbar-nav>.open>a, .navbar-custom-socialquest .navbar-nav>.open>a:focus, .navbar-custom-socialquest .navbar-nav>.open>a:hover {
+    color: white;
+    background-color: #565656;
+}
+.navbar-custom-socialquest .nav li a:hover, .navbar-custom-socialquest .nav li a:focus {
+    color: white;
+    background-color: #565656;
 }
 
 .container.normal-page {
@@ -77,3 +91,41 @@ body {
 	
  }
  
+ .masmedallas{
+	 background-color:grey;
+	 border-radius:5px;
+	 padding:10px;
+	 display:inline-block;
+	 vertical-align: top;
+	 margin:10px;
+	 margin-top:20px;
+ }
+  .masmedallas:hover{
+	 background-color:black;
+	
+ }
+ #masmedallas{
+	 font-size: 20px;
+	 color:white;
+	 font-weight: bold;
+	 text-align:center;
+	 }
+	 
+	 
+.voffset0  { margin-top: 0px; }
+.voffset  { margin-top: 2px; }
+.voffset1 { margin-top: 5px; }
+.voffset2 { margin-top: 10px; }
+.voffset3 { margin-top: 15px; }
+.voffset31 { margin-top: 20px; }
+.voffset4 { margin-top: 30px; }
+.voffset5 { margin-top: 40px; }
+.voffset6 { margin-top: 60px; }
+.voffset7 { margin-top: 80px; }
+.voffset8 { margin-top: 100px; }
+.voffset9 { margin-top: 150px; }
+
+.profile-search-wrap {
+	border: 1px solid whitesmoke;
+	padding: 10px;
+}

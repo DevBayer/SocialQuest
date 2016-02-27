@@ -3,8 +3,9 @@
     <!-- Main Content -->
     <div class="container normal-page">
         <div class="row">
-
+		@if(!isset($public) || !$public)
 		@include('SocialQuest.user.partials.configure_profile')
+		@endif
 
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1" style="border: 2px solid whitesmoke">
 				<!---Inicio zona dinamica --> 

@@ -7,18 +7,29 @@ use App\User;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-class UserController extends Controller
+class SearchController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $user = \Auth::user();
-        return view('SocialQuest.user.profile', compact('user'));
+	$results = NULL;
+	if($request->input('query')){
+		$results = User::where('name', 'LIKE', '%'.$request->input('query').'%')->orWhere('surname1', 'LIKE', '%'.$request->input('query').'%')->orWhere('surname2', 'LIKE', '%'.$request->input('query').'%')->paginate(10);
+	}
+        return view('SocialQuest.search.home', compact('results'));
     }
+
+	public function search(Request $request, $search){
+		$results="";
+		if($search){
+			$results = User::where('name', 'LIKE', '%'.$search.'%')->orWhere('surname1', 'LIKE', '%'.$search.'%')->orWhere('surname2', 'LIKE', '%'.$search.'%')->paginate(10);
+		}
+		return view('SocialQuest.search.home', compact('results'));
+	}
 
     /**
      * Show the form for creating a new resource.
@@ -47,11 +58,9 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id, $name)
+    public function show($id)
     {
-	$user = User::findOrFail($id);
-	$public = true;
-	return view('SocialQuest.user.profile', compact('user', 'public'));
+        //
     }
 
     /**
@@ -60,10 +69,9 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit()
+    public function edit($id)
     {
-        $user = \Auth::user();
-        return view('SocialQuest.user.edit', compact('user'));
+        //
     }
 
     /**
@@ -73,15 +81,9 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request)
+    public function update(Request $request, $id)
     {
-        if($request->user()){
-		$user = User::find(\Auth::user()->id)->first();
-		$user->fill($request->all());
-		$user->save();
-		/** create setLocation and parse between http://maps.googleapis.com/maps/api/geocode/json?latlng=41.404045599999996,2.1786171999999997&sensor=true to get real data. **/
-		return redirect()->route('user.edit');
-	}
+        //
     }
 
     /**
