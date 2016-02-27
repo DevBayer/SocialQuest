@@ -20,6 +20,7 @@
 	{!! Html::style('socialquest/css/app/customcss.css') !!}
 	{!! Html::style('socialquest/css/bootstrap-social-gh-pages/bootstrap-social.css') !!}
 	{!! Html::style('socialquest/css/sweetalert/sweetalert.css') !!}
+	{!! Html::style('socialquest/fonts/flaticon/flaticon.css') !!}
 
     <!-- Custom Fonts -->
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -59,18 +60,21 @@
                     <li>
                         <a href="{{ route('static.how_works') }}">Como funciona</a>
                     </li>
-                    <li>
-                        <a href="{{ route('static.contact') }}">Contacto</a>
-                    </li>
                     @if(Auth::check())
-			<li>
-				<a href="{{ route('user.profile') }}"><i class="fa fa-user"></i> Mi perfil</a>
+			<li class="dropdown">
+				<a class="dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expended="false" href="#"><i class="fa fa-user"></i> Mi perfil <span class="caret"></span></a>
+				<ul class="dropdown-menu">
+					<li><a href="{{ route('user.profile') }}">Mi cuenta</a>
+					<li><a href="{{ route('user.edit') }}">Configuración</a>
+					<li role="separator" class="divider"></li>
+					<li><a href="/auth/logout">Cerrar sesión</a>
+				</ul>
 			</li>
 	                <li>
         	                <a href="#"><i class="fa fa-map-marker"></i> Buscar Quest</a>
                 	</li>
 	                <li>
-          	              <a href="#"><i class="fa fa-search"></i> Buscar</a>
+          	              <a href="{{ route('search.home') }}"><i class="fa fa-search"></i> Buscar</a>
                 	</li>
 		    @else
 	                   <li>

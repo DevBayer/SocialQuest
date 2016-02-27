@@ -40,6 +40,7 @@ Route::group(['prefix' => 'usuario', 'middleware' => 'auth'], function () {
 
 	Route::get('/', ['as' => 'user.profile', 'uses' => 'UserController@index']);
 	Route::get('perfil', ['as' => 'user.profile', 'uses' => 'UserController@index']);
+	Route::get('perfil/{id}/{name}', ['as' => 'user.open_profile', 'uses' => 'UserController@show']);
 
 	Route::get('editar', ['as' => 'user.edit', 'uses' => 'UserController@edit']);
 	Route::put('editar', ['as' => 'user.update', 'uses' => 'UserController@update']);
@@ -48,3 +49,5 @@ Route::group(['prefix' => 'usuario', 'middleware' => 'auth'], function () {
 
 
 Route::get('quests/mapa', ['as' => 'quests.map', 'uses' => 'QuestsController@index']);
+Route::get('buscar', ['as' => 'search.home', 'uses' => 'SearchController@index']);
+Route::get('buscar/{search}', ['as' => 'search.query', 'uses' => 'SearchController@search']);
