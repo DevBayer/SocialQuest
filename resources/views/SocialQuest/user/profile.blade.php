@@ -13,29 +13,29 @@
 					<hr>
 					<div class="Perfil col-md-6"  align="center">
 							<a href="#" class="pull-left">
-								<img src="{{ Auth::user()->AvatarContent }}" class="fotoperfil" />
+								<img src="{{ $user->AvatarContent }}" class="fotoperfil" />
 							</a>
 						<div class="pull-left text-center">
 							<h3 class="title">
-								<a href="#">{{ Auth::user()->name }}</a>
+								<a href="#">{{ $user->name }}</a>
 							</h3>
 							<h4 class="title">
-								<a href="#">{{ Auth::user()->surnames }}</a>
+								<a href="#">{{ $user->surnames }}</a>
 							</h4>
 						</div>
 						<div class="clearfix"></div>
-						@if(!empty(Auth::user()->biography))
+						@if(!empty($user->biography))
 						  <span class="bloqueusuario">
-							<span class="glyphicon glyphicon-sunglasses"></span> {{ Auth::user()->biography }}
+							<span class="glyphicon glyphicon-sunglasses"></span> {{ $user->biography }}
 						  </span>
 						@endif
-						@if(!empty(Auth::user()->location))
+						@if(!empty($user->location))
 						   <span class="bloqueusuario">
-							<span class="glyphicon glyphicon-map-marker"></span> {{ Auth::user()->location }}
+							<span class="glyphicon glyphicon-map-marker"></span> {{ $user->location }}
 						  </span>
 						@endif
 						  <span class="bloqueusuario">
-							<span class="glyphicon glyphicon-calendar"></span> {{ Auth::user()->DateCreatedFormated }}
+							<span class="glyphicon glyphicon-calendar"></span> {{ $user->DateCreatedFormated }}
 						  </span>
 					</div>
 				</div>
@@ -57,7 +57,7 @@
 					<div class="stats-box">
 						<div class="row">
 							<div class="col-md-2">
-								<h4>Nivel: <small>{{ Auth::user()->level }}</small></h4>
+								<h4>Nivel: <small>{{ $user->level }}</small></h4>
 							</div>
 							<div class="col-md-10">
 							<h4>PX: </h4>

@@ -6,7 +6,7 @@
             <div class="col-md-12" style="border: 2px solid whitesmoke">
 			<!---Inicio zona dinamica --> 
 			<h3>Editar información</h3>
-			{!! Form::model(Auth::user(),['url' => '/usuario/editar', 'method' => 'PUT', 'files' => true]) !!}
+			{!! Form::model($user,['url' => '/usuario/editar', 'method' => 'PUT', 'files' => true]) !!}
 				<div class="row">
 				<div class="col-md-6">
 					{!! Form::label('email', 'Correo electrónico') !!}
@@ -94,8 +94,8 @@ $( document ).ready(function() {
 
       var map = new GMaps({
         el: '#map',
-        lat: {{ Auth::user()->latitude }},
-        lng: {{ Auth::user()->longitud }}
+        lat: {{ $user->latitude }},
+        lng: {{ $user->longitud }}
       });
 
 	var _latlng = "";
