@@ -21,6 +21,7 @@ Route::get('/', ['as' => 'static.home', 'uses' => 'StaticController@home']);
 Route::get('inicio', ['as' => 'static.home', 'uses' => 'StaticController@home']);
 Route::get('como-funciona', ['as' => 'static.how_works', 'uses' => 'StaticController@how_works']);
 Route::get('contacto', ['as' => 'static.contact', 'uses' => 'StaticController@contact']);
+Route::get('sobre-nosotros', ['as' => 'static.about', 'uses' => 'StaticController@about']);
 
 // Authentication routes...
 Route::get('auth/login', 'Auth\AuthController@getLogin');
@@ -54,6 +55,7 @@ Route::group(['prefix' => 'quests', 'middleware' => 'auth'], function () {
 	Route::delete('/', ['as' => 'quests.delete', 'uses' => 'QuestsController@delete']);
 	Route::get('/create', ['as' => 'quests.create', 'uses' => 'QuestsController@create']);
 	Route::post('/create', ['as' => 'quests.create', 'uses' => 'QuestsController@store']);
+	Route::post('/request', ['as' => 'quests.request', 'uses' => 'QuestsController@request']);
 });
 
 Route::get('buscar', ['as' => 'search.home', 'uses' => 'SearchController@index']);

@@ -63,6 +63,7 @@ class QuestsController extends Controller
             $request['latitude'] = explode(",",$request->latlng)[1];
             $request['longitude'] = explode(",",$request->latlng)[0];
             $element = \App\Quest::create($request->all());
+  
             \Session::flash('message', 'Quest creada correctamente');
             return \Redirect::route('quests.list');
         }

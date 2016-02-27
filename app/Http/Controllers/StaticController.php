@@ -29,6 +29,9 @@ class StaticController extends Controller
         return view('SocialQuest.how_works');
     }
 
-
+     public function about()
+    {
+        return view('SocialQuest.about');
+    }
 
 }
