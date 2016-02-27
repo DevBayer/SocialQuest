@@ -45,3 +45,6 @@ Route::group(['prefix' => 'usuario', 'middleware' => 'auth'], function () {
 	Route::put('editar', ['as' => 'user.update', 'uses' => 'UserController@update']);
 
 });
+
+
+Route::get('quests/mapa', ['as' => 'quests.map', 'uses' => 'QuestsController@index']);
