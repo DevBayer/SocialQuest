@@ -1,0 +1,3 @@
+[submodule "public/socialquest/thirds/gmaps"]
+	path = public/socialquest/thirds/gmaps
+	url = https://github.com/hpneo/gmaps
