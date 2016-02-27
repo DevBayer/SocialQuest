@@ -66,7 +66,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="/">SocialQuest</a>
+                <a class="pull-left" href="/"><img src="/socialquest/img/2.png" style="height: 60px;"></a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -113,7 +113,7 @@
     <footer>
         <div class="container">
             <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="text-center">
                     <ul class="list-inline text-center">
                         <li>
                             <a href="#">
@@ -140,7 +140,9 @@
                             </a>
                         </li>
                     </ul>
-                    <p class="copyright text-muted">Copyright &copy; Your Website 2014</p>
+                    <small>SocialQuest's logo icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> 
+                        from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> 
+                        is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></small>
                 </div>
             </div>
         </div>
