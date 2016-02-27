@@ -90,8 +90,11 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy()
     {
-        //
+        if($request->isMethod('delete')){
+		User::destroy(\Auth::user()->id);
+		return redirect()->route('static.home')->with('message', 'El usuario ha sido eliminado correctamente.');
+	}
     }
 }
