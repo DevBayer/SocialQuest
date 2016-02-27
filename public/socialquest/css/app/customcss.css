@@ -15,8 +15,19 @@ body {
 	padding-top: 100px;
 }
 
+.btn-social {
+	padding-left: 38px;
+	padding: 5px 15px;
+	font-weight: normal;
+	font-size: 12px;
+}
+
 .btn-social > .fa {
-	line-height: 55px !important;
+	line-height: 30px !important;
+}
+
+.register-hyperlink {
+    font-size: 16px;
 }
 
 .opcionesMain {
@@ -35,3 +46,34 @@ body {
 	
 	text-decoration: none;
 }
+
+
+.Perfil .bloqueusuario,  .valoracion .bloqueusuario{
+	display: block;
+	margin-bottom:5px;
+}
+.Perfil .bloqueusuario > span, .valoracion .bloqueusuario > span{
+	display: inline;
+}
+.Perfil .bloqueusuario > .glyphicon, .valoracion .bloqueusuario > .glyphicon {
+  margin-right:10px;
+  }
+ .fotoperfil{
+	border-radius: 100%;
+	border:1px solid green ;
+	width:110px;
+	height:110px;
+	 
+ }
+ 
+ .main {
+	 margin-top: 80px;
+ }
+ .inline{display:inline;}
+ #lvl{
+	color:green;
+	font-size:30px;
+	font-family: 'Passion One', cursive;
+	
+ }
+ 

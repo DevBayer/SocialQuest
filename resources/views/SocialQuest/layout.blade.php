@@ -19,7 +19,7 @@
 	{!! Html::style('socialquest/css/app/home_PL.css') !!}
 	{!! Html::style('socialquest/css/app/customcss.css') !!}
 	{!! Html::style('socialquest/css/bootstrap-social-gh-pages/bootstrap-social.css') !!}
-
+	{!! Html::style('socialquest/css/sweetalert/sweetalert.css') !!}
 
     <!-- Custom Fonts -->
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -64,8 +64,14 @@
                     </li>
                     @if(Auth::check())
 			<li>
-				<a href="#">Mi perfil</a>
+				<a href="{{ route('user.profile') }}"><i class="fa fa-user"></i> Mi perfil</a>
 			</li>
+	                <li>
+        	                <a href="#"><i class="fa fa-map-marker"></i> Buscar Quest</a>
+                	</li>
+	                <li>
+          	              <a href="#"><i class="fa fa-search"></i> Buscar</a>
+                	</li>
 		    @else
 	                   <li>
 				<a data-toggle="modal" data-target="#modal-login" class="modal-login" href="#">Entrar</a>
@@ -77,7 +83,6 @@
         </div>
         <!-- /.container -->
     </nav>
-
 	@yield('page_content')
 
     <!-- Footer -->
@@ -132,6 +137,14 @@
 <!--    <script src="js/clean-blog.min.js"></script> -->
         {!! HTML::script('socialquest/js/clean-blog.min.js'); !!}
 
+	{!! HTML::script('socialquest/js/sweetalert/sweetalert.min.js'); !!}
+
+
+	<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
+	{!! HTML::script('socialquest/thirds/gmaps/gmaps.min.js'); !!}
+
+
+	@yield('scripts')
 
 </body>
 

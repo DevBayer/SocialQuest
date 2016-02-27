@@ -30,3 +30,18 @@ Route::get('auth/logout', 'Auth\AuthController@getLogout');
 // Registration routes...
 Route::get('auth/register', 'Auth\AuthController@getRegister');
 Route::post('auth/register', 'Auth\AuthController@postRegister');
+
+
+Route::bind('usuario', function() {
+    $user = Auth::user();
+});
+
+Route::group(['prefix' => 'usuario', 'middleware' => 'auth'], function () {
+
+	Route::get('/', ['as' => 'user.profile', 'uses' => 'UserController@index']);
+	Route::get('perfil', ['as' => 'user.profile', 'uses' => 'UserController@index']);
+
+	Route::get('editar', ['as' => 'user.edit', 'uses' => 'UserController@edit']);
+	Route::put('editar', ['as' => 'user.update', 'uses' => 'UserController@update']);
+
+});

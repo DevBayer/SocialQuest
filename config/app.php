@@ -146,6 +146,7 @@ return [
         App\Providers\RouteServiceProvider::class,
 
 	'Illuminate\Html\HtmlServiceProvider',
+	Intervention\Image\ImageServiceProvider::class
 
     ],
 
@@ -197,6 +198,7 @@ return [
         'View'      => Illuminate\Support\Facades\View::class,
 	'Form'=> 'Illuminate\Html\FormFacade', 
 	'Html'=> 'Illuminate\Html\HtmlFacade',
+	'Image' => Intervention\Image\Facades\Image::class
     ],
 
 ];
