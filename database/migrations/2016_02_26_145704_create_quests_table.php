@@ -14,19 +14,20 @@ class CreateQuestsTable extends Migration
     {
        Schema::create('quests', function (Blueprint $table) {
             $table->increments('id');
-	    $table->integer('user_id')->unsigned();
-	    $table->integer('category_id')->unsigned();
+            $table->integer('user_id')->unsigned();
+	        $table->integer('category_id')->unsigned();
             $table->text('description');
-	    $table->string('location');
+            $table->string('location');
+            $table->string('latlng');
+            $table->string('latitude', 100);
+            $table->string('longitude', 100);
             $table->dateTime('start_time');
-	    $table->dateTime('end_time');
+            $table->dateTime('end_time');
             $table->timestamps();
-
-		$table->foreign('user_id')
+            $table->foreign('user_id')
 		      ->references('id')->on('users')
 		      ->onDelete('restrict');
-
-		$table->foreign('category_id')
+            $table->foreign('category_id')
 		      ->references('id')->on('categories')
 		      ->onDelete('restrict');
 

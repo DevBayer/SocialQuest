@@ -15,28 +15,23 @@
 					{!! Form::label('name', 'Nombre real') !!}
 					{!! Form::text('name', null, ['placeholder' => 'Nombre real', 'class' => 'form-control']) !!}
 
-	                                {!! Form::label('surname1', 'Primer apellido') !!}
-	                                {!! Form::text('surname1', null, ['placeholder' => 'Primer apellido', 'class' => 'form-control']) !!}
+          {!! Form::label('surname1', 'Primer apellido') !!}
+          {!! Form::text('surname1', null, ['placeholder' => 'Primer apellido', 'class' => 'form-control']) !!}
 
-	                                {!! Form::label('surname2', 'Segundo apellido') !!}
-        	                        {!! Form::text('surname2', null, ['placeholder' => 'Segundo apellido', 'class' => 'form-control']) !!}
-	                 	</div>
+          {!! Form::label('surname2', 'Segundo apellido') !!}
+          {!! Form::text('surname2', null, ['placeholder' => 'Segundo apellido', 'class' => 'form-control']) !!}
+        </div>
 
 				<div class="col-md-6">
-                                        {!! Form::label('biography', 'Biografía') !!}
-                                        {!! Form::textarea('biography', null, ['placeholder' => 'Pequeña biografía de 150 carácteres aprox.', 'class' => 'form-control', 'style' => 'height: 105px']) !!}
-
+					{!! Form::label('biography', 'Biografía') !!}
+					{!! Form::textarea('biography', null, ['placeholder' => 'Pequeña biografía de 150 carácteres aprox.', 'class' => 'form-control', 'style' => 'height: 105px']) !!}
 					<div id="map" style="height: 300px;background: #6699cc;"></div>
-
-	                                {!! Form::label('location', 'Localización') !!}
-	                                {!! Form::text('location', null, ['placeholder' => 'Localización', 'class' => 'form-control']) !!}
-					<a href="#" id="search_address">Buscar</a>
-
-	                                {!! Form::label('avatar', 'Imagen de perfil') !!}
-	                                {!! Form::file('avatar') !!}
-
-
-					{!! Form::hidden('latlng') !!}
+						{!! Form::label('location', 'Localización') !!}
+						{!! Form::text('location', null, ['placeholder' => 'Localización', 'class' => 'form-control']) !!}
+						<a href="#" id="search_address">Buscar</a>
+            {!! Form::label('avatar', 'Imagen de perfil') !!}
+            {!! Form::file('avatar') !!}
+						{!! Form::hidden('latlng') !!}
 				</div>
 
 				</div>
@@ -70,8 +65,8 @@ $( document ).ready(function() {
 
   function deleteAlert() {
     swal({
-      title: "Estás seguro?", 
-      text: "Estás a punto de borrar tu cuenta de SocialQuest, quieres continuar?", 
+      title: "¿Estás seguro?", 
+      text: "Estás a punto de borrar tu cuenta de SocialQuest, ¿quieres continuar?", 
       type: "warning",
       showCancelButton: true,
       closeOnConfirm: false,
@@ -83,10 +78,10 @@ $( document ).ready(function() {
         type: "DELETE"
       })
       .done(function(data) {
-        swal("Deleted!", "Tu cuenta ha sido correctamente eliminada!", "success");
+        swal("Deleted!", "¡Tu cuenta ha sido correctamente eliminada!", "success");
       })
       .error(function(data) {
-        swal("Oops", "Ha habido un error interno del servidor, prueba más tarde!", "error");
+        swal("Oops", "Ha habido un error interno del servidor. Por favor, vuelve a intentarlo.", "error");
       });
     });
   }
@@ -95,29 +90,33 @@ $( document ).ready(function() {
       var map = new GMaps({
         el: '#map',
         lat: {{ $user->latitude }},
-        lng: {{ $user->longitud }}
+        lng: {{ $user->longitude }}
       });
 
 	var _latlng = "";
 
-      GMaps.geolocate({
-        success: function(position){
-          map.setCenter(position.coords.latitude, position.coords.longitude);
-//		alert(position.coords.latitude+','+position.coords.longitude)
-		_latlng = position.coords.latitude+','+position.coords.longitude;
-		$('input[name=latlng]').val(_latlng);
-		console.log(_latlng);
-        },
-        error: function(error){
-          alert('Geolocation failed: '+error.message);
-        },
-        not_supported: function(){
-          alert("Your browser does not support geolocation");
-        },
-        always: function(){
-//          alert("Done!");
+  GMaps.geolocate({
+    success: function(position){
+      map.setCenter(position.coords.latitude, position.coords.longitude);
+      _latlng = position.coords.latitude+','+position.coords.longitude;
+      $('input[name=latlng]').val(_latlng);
+      $.ajax({
+        url: "http://maps.googleapis.com/maps/api/geocode/json?latlng=" + _latlng,
+        success: function(result) {
+          $('input[name=location]').val(result.results[0].formatted_address);
         }
       });
+    },
+    error: function(error){
+      alert('Geolocation failed: '+error.message);
+    },
+    not_supported: function(){
+      alert("Your browser does not support geolocation");
+    },
+    always: function(){
+    //          alert("Done!");
+    }
+  });
 
   $('#search_address').click(function(e){
         e.preventDefault();

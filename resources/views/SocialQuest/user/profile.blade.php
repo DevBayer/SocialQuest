@@ -30,7 +30,7 @@
 						  </span>
 						@endif
 						@if(!empty($user->location))
-						   <span class="bloqueusuario">
+							<span class="bloqueusuario">
 							<span class="glyphicon glyphicon-map-marker"></span> {{ $user->location }}
 						  </span>
 						@endif

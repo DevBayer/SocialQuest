@@ -29,7 +29,7 @@ class User extends Model implements AuthenticatableContract,
      *
      * @var array
      */
-    protected $fillable = ['name', 'surname1', 'surname2', 'avatar', 'biography', 'location', 'latlng', 'email', 'password'];
+    protected $fillable = ['name', 'surname1', 'surname2', 'avatar', 'biography', 'location', 'latlng', 'latitude', 'longitude', 'email', 'password'];
 
     /**
      * The attributes excluded from the model's JSON form.
@@ -82,13 +82,13 @@ class User extends Model implements AuthenticatableContract,
 	}
 
 
-        public function getLongitudAttribute(){
-                if(!empty($this->latlng)){
-                        return explode(",",$this->latlng)[0];
-                }else{
-                        return '41.4045963';
-                }
-        }
+    public function getLongitudeAttribute(){
+            if(!empty($this->latlng)){
+                    return explode(",",$this->latlng)[0];
+            }else{
+                    return '41.4045963';
+            }
+    }
 
 
 	public function getLatitudeAttribute(){
@@ -97,6 +97,14 @@ class User extends Model implements AuthenticatableContract,
 		}else{
 			return '2.1790418';
 		}
+	}
+
+	public function setLongitudeAttribute(){
+        $this->longitude = explode(",",$this->latlng)[0];
+    }
+
+	public function setLatitudeAttribute($value) {
+		$this->latitude = explode(",",$this->latlng)[1];
 	}
 
 }
